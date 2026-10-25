@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#153e75">
+<title>مقياس مستوى استخدام معلمي المرحلة الثانوية لنماذج الذكاء الاصطناعي في التعليم</title>
+<style>
+:root{--navy:#153e75;--blue:#2563eb;--teal:#0f766e;--ink:#172033;--muted:#64748b;--line:#dbe4f0;--bg:#f3f6fb;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(140deg,#edf4ff,#f7fafc 55%,#e7f5f2);font-family:Tahoma,Arial,sans-serif;color:var(--ink);line-height:1.8}
+header{background:linear-gradient(120deg,#102e59,#1d5792);color:#fff;padding:36px 18px 30px;text-align:center}
+.wrap{max-width:960px;margin:auto;padding:20px 16px 50px}.badge{display:inline-block;background:#d8f3ed;color:#075e55;padding:4px 13px;border-radius:30px;font-size:13px;font-weight:bold}
+h1{font-size:clamp(23px,4vw,34px);line-height:1.55;margin:12px auto;max-width:850px}header p{margin:8px auto 0;max-width:780px;color:#e3edff}
+.panel,.dimension{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px 0;box-shadow:0 8px 24px #1e3a5f0a}
+.notice{border-right:4px solid var(--teal);background:#effaf7;padding:13px 15px;border-radius:10px;font-size:14px}
+h2{color:var(--navy);font-size:21px;margin:0 0 12px}h3{margin:0;color:var(--navy);font-size:19px}.sub{color:var(--muted);font-size:14px;margin-top:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.field label{display:block;font-weight:bold;font-size:14px;margin-bottom:5px}.field input,.field select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;background:white}
+.scale-head{display:grid;grid-template-columns:minmax(200px,1fr) repeat(5,minmax(45px,68px));gap:7px;align-items:center;color:var(--muted);font-size:12px;text-align:center;padding:8px 10px;background:#f8fafc;border-radius:10px;margin:12px 0}
+.item{display:grid;grid-template-columns:minmax(200px,1fr) repeat(5,minmax(45px,68px));gap:7px;align-items:center;padding:13px 10px;border-bottom:1px solid #edf1f7}
+.item:last-child{border-bottom:0}.statement{font-size:14px}.choice{text-align:center}.choice input{accent-color:var(--blue);width:19px;height:19px;cursor:pointer}.choice label{display:flex;align-items:center;justify-content:center;min-height:35px;cursor:pointer}
+button{border:0;border-radius:12px;padding:13px 20px;font:inherit;font-weight:bold;cursor:pointer}.primary{background:var(--blue);color:#fff}.secondary{background:#e8eef7;color:var(--navy)}.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:24px 0}
+#result{display:none}.scorebox{background:#f1f7ff;border:1px solid #cfe0fa;border-radius:14px;padding:20px;text-align:center}.bigscore{font-size:38px;font-weight:bold;color:var(--navy)}.bars{display:grid;gap:12px;margin-top:16px}.barrow{display:grid;grid-template-columns:1fr auto;gap:10px}.track{grid-column:1/-1;height:10px;background:#e4eaf3;border-radius:20px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#0f766e,#3b82f6);width:0}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:22px}
+@media(max-width:600px){.panel,.dimension{padding:15px}.scale-head,.item{grid-template-columns:minmax(0,1fr) repeat(5,35px);gap:3px;padding-left:4px;padding-right:4px}.scale-head{font-size:10px}.statement{font-size:13px}.choice input{width:17px;height:17px}.item{align-items:start}.choice label{min-height:34px}}
+@media print{header{padding:15px}.wrap{max-width:none}.panel,.dimension{box-shadow:none;break-inside:avoid}button,.actions{display:none}body{background:white}}
+</style></head>
+<body>
+<header><span class="badge">أداة قياس تربوية — نسخة أولية</span><h1>مقياس مستوى استخدام معلمي المرحلة الثانوية لنماذج الذكاء الاصطناعي في التعليم</h1><p>استبانة رقمية عربية لقياس الاستخدام التعليمي، والكفايات الرقمية، والاتجاهات والتعامل مع التحديات.</p></header>
+<main class="wrap">
+<section class="panel"><h2>عزيزي المعلم / عزيزتي المعلمة</h2><p>تهدف هذه الأداة إلى التعرف على مستوى استخدام نماذج الذكاء الاصطناعي في الممارسات التعليمية لدى معلمي المرحلة الثانوية. يرجى قراءة كل عبارة واختيار درجة واحدة تعكس واقع ممارستك خلال الفصل الدراسي الحالي. لا توجد إجابات صحيحة أو خاطئة.</p><div class="notice"><b>مقياس الاستجابة:</b> 1 = لا أوافق بشدة، 2 = لا أوافق، 3 = محايد، 4 = أوافق، 5 = أوافق بشدة.<br><b>الخصوصية:</b> لا تُرسل إجاباتك إلى خادم ولا تُجمع تلقائيًا؛ يمكنك حساب نتيجتك وتنزيل نسخة CSV على جهازك.</div></section>
+<form id="survey">
+<section class="panel"><h2>أولًا: معلومات عامة (اختيارية)</h2><div class="grid">
+<div class="field"><label for="gender">الجنس</label><select id="gender"><option value="">اختر (اختياري)</option><option>ذكر</option><option>أنثى</option><option>أفضل عدم الإجابة</option></select></div>
+<div class="field"><label for="experience">سنوات الخبرة في التدريس</label><select id="experience"><option value="">اختر (اختياري)</option><option>أقل من 5 سنوات</option><option>5–10 سنوات</option><option>11–15 سنة</option><option>16 سنة فأكثر</option></select></div>
+<div class="field"><label for="subject">التخصص</label><input id="subject" placeholder="مثال: العلوم، اللغة العربية (اختياري)"></div>
+<div class="field"><label for="training">تلقيت تدريبًا في الذكاء الاصطناعي</label><select id="training"><option value="">اختر (اختياري)</option><option>نعم</option><option>لا</option></select></div>
+</div></section>
+<div id="questions"></div>
+<div class="actions"><button type="submit" class="primary">حساب النتيجة</button><button type="button" class="secondary" id="download">تنزيل الإجابات CSV</button><button type="reset" class="secondary">مسح الإجابات</button></div>
+</form>
+<section id="result" class="panel" aria-live="polite"><h2>نتيجتك</h2><div class="scorebox"><div>المتوسط العام من 5</div><div class="bigscore" id="average">—</div><div id="level"></div><p id="total"></p></div><div id="dimensionScores" class="bars"></div><p class="sub">تفسير وصفي أولي لهذه النسخة، وليس حكمًا تشخيصيًا أو معيارًا معتمدًا. لا تُستخدم النتائج لاتخاذ قرارات مهنية دون التحقق من صدق الأداة وثباتها.</p><div class="actions"><button type="button" class="primary" onclick="window.print()">طباعة النتيجة</button></div></section>
+<section class="panel"><h2>ملاحظة منهجية مهمة</h2><p>هذه صياغة أولية مقترحة لأغراض التصميم والتجريب. قبل استخدامها في بحث علمي أو تعميم نتائجها، يُوصى بعرض العبارات على محكّمين متخصصين، وإجراء دراسة استطلاعية، والتحقق من الصدق والثبات (مثل معامل ألفا كرونباخ) ومراجعة معايير التفسير وفق عينة الدراسة.</p></section>
+</main><footer>مقياس استخدام نماذج الذكاء الاصطناعي في التعليم — تصميم أولي قابل للتطوير</footer>
+<script>
+const dimensions=[
+{title:"المحور الأول: الاستخدام والتوظيف التعليمي",desc:"يقيس مدى دمج أدوات الذكاء الاصطناعي في التخطيط والتدريس والتقويم.",items:[
+"أستخدم نماذج الذكاء الاصطناعي لتوليد أفكار وأنشطة تعليمية مناسبة لمادتي.",
+"أستعين بالذكاء الاصطناعي في إعداد خطط الدروس والأهداف التعليمية.",
+"أستخدمه لإنتاج أمثلة وشروحات إضافية للمفاهيم الصعبة.",
+"أوظّف أدوات الذكاء الاصطناعي في إعداد أسئلة وأنشطة تقويمية.",
+"أستفيد منه في تكييف المحتوى ليتناسب مع مستويات الطلاب المختلفة.",
+"أستخدمه لتصميم أنشطة تعزز التفكير الناقد وحل المشكلات.",
+"أوظّف مخرجاته في إعداد أوراق العمل والمواد التعليمية.",
+"أراجع مخرجات الذكاء الاصطناعي وأعدلها قبل استخدامها مع الطلاب.",
+"أدمج استخدامه ضمن أهداف الدرس وليس لمجرد استخدام التقنية.",
+"أقيّم أثر الأنشطة المدعومة بالذكاء الاصطناعي في تعلم الطلاب."
+]},
+{title:"المحور الثاني: الكفايات والمهارات",desc:"يقيس المعرفة العملية والقدرة على الاستخدام المسؤول والفعّال.",items:[
+"أستطيع اختيار نموذج ذكاء اصطناعي يتناسب مع المهمة التعليمية.",
+"أكتب تعليمات واضحة ومحددة للحصول على مخرجات مناسبة.",
+"أحسن صياغة التعليمات عندما لا تكون المخرجات الأولى مناسبة.",
+"أتحقق من دقة المعلومات التي ينتجها النموذج قبل اعتمادها.",
+"أميز بين الحقائق الموثقة والمعلومات التي تحتاج إلى تحقق إضافي.",
+"أراعي مستوى الطلاب وخصائصهم عند إعداد طلبات الذكاء الاصطناعي.",
+"ألتزم بحماية بيانات الطلاب وعدم إدخال معلوماتهم الشخصية.",
+"أراعي حقوق الملكية الفكرية عند استخدام المحتوى المُولّد.",
+"أستطيع اكتشاف التحيز أو عدم الملاءمة في بعض المخرجات.",
+"أواصل تطوير مهاراتي في استخدام نماذج الذكاء الاصطناعي التعليمية."
+]},
+{title:"المحور الثالث: الاتجاهات والتعامل مع التحديات",desc:"يقيس تقبّل الاستخدام والثقة المسؤولة والقدرة على معالجة العقبات.",items:[
+"أرى أن الاستخدام المسؤول للذكاء الاصطناعي يمكن أن يدعم جودة التعليم.",
+"أشعر بالثقة عند تجربة أدوات ذكاء اصطناعي جديدة لأغراض تعليمية.",
+"أتحقق من سياسات المدرسة أو الجهة التعليمية قبل استخدام الأدوات.",
+"أوضح للطلاب متى وكيف يُسمح باستخدام الذكاء الاصطناعي في التعلم.",
+"أوازن بين الاستفادة من الذكاء الاصطناعي والمحافظة على دور المعلم.",
+"أستطيع التعامل مع المخرجات غير الدقيقة دون الاعتماد عليها مباشرة.",
+"أبحث عن بدائل عند تعذر الوصول إلى أداة الذكاء الاصطناعي.",
+"أراعي العدالة وإتاحة الفرص عند تصميم أنشطة تعتمد على هذه الأدوات.",
+"أشجع الاستخدام الذي يعزز تعلم الطلاب بدلًا من إنجاز المهام نيابة عنهم.",
+"أرغب في المشاركة في تدريب مهني يطوّر استخدامي التعليمي للذكاء الاصطناعي."
+]}];
+const scaleLabels=["لا أوافق بشدة","لا أوافق","محايد","أوافق","أوافق بشدة"];
+const root=document.getElementById('questions');
+dimensions.forEach((d,di)=>{const section=document.createElement('section');section.className='dimension';section.innerHTML='<h2>'+d.title+'</h2><p class="sub">'+d.desc+'</p><div class="scale-head"><span>العبارة</span>'+scaleLabels.map((x,i)=>'<span>'+ (i+1) +'<br>'+x+'</span>').join('')+'</div><div class="items"></div>';const list=section.querySelector('.items');d.items.forEach((q,qi)=>{const id='q'+(di*10+qi+1);const row=document.createElement('div');row.className='item';row.innerHTML='<div class="statement"><b>'+(di*10+qi+1)+'.</b> '+q+'</div>'+[1,2,3,4,5].map(v=>'<div class="choice"><label title="'+scaleLabels[v-1]+'"><input type="radio" name="'+id+'" value="'+v+'" aria-label="'+scaleLabels[v-1]+'"></label></div>').join('');list.appendChild(row)});root.appendChild(section)});
+function collect(){const answers=[];for(let i=1;i<=30;i++){const selected=document.querySelector('input[name="q'+i+'"]:checked');if(!selected)return null;answers.push(Number(selected.value))}return answers}
+function calculate(answers){const groups=[answers.slice(0,10),answers.slice(10,20),answers.slice(20,30)];const means=groups.map(g=>g.reduce((a,b)=>a+b,0)/g.length);const avg=answers.reduce((a,b)=>a+b,0)/30;return {groups,means,avg,total:answers.reduce((a,b)=>a+b,0),level:avg<2.34?'منخفض':avg<3.68?'متوسط':'مرتفع'}}
+document.getElementById('survey').addEventListener('submit',e=>{e.preventDefault();const a=collect();if(!a){alert('يرجى الإجابة عن العبارات الثلاثين قبل حساب النتيجة.');const missing=Array.from({length:30},(_,i)=>i+1).find(i=>!document.querySelector('input[name="q'+i+'"]:checked'));document.querySelector('input[name="q'+missing+'"]').closest('.item').scrollIntoView({behavior:'smooth',block:'center'});return}showResult(calculate(a));});
+function showResult(r){document.getElementById('result').style.display='block';document.getElementById('average').textContent=r.avg.toFixed(2);document.getElementById('level').textContent='المستوى العام: '+r.level;document.getElementById('total').textContent='المجموع الكلي: '+r.total+' من 150';const box=document.getElementById('dimensionScores');box.innerHTML='';dimensions.forEach((d,i)=>{const el=document.createElement('div');el.innerHTML='<div class="barrow"><span>'+d.title+'</span><b>'+r.means[i].toFixed(2)+' / 5</b><div class="track"><div class="fill" style="width:'+(r.means[i]/5*100)+'%"></div></div></div>';box.appendChild(el)});document.getElementById('result').scrollIntoView({behavior:'smooth',block:'start'})}
+document.getElementById('download').addEventListener('click',()=>{const a=collect();if(!a){alert('أكمل الإجابة عن العبارات الثلاثين أولًا لتنزيل الإجابات.');return}const r=calculate(a);const rows=[['البند','الاستجابة'],['الجنس',document.getElementById('gender').value],['سنوات الخبرة',document.getElementById('experience').value],['التخصص',document.getElementById('subject').value],['تدريب سابق',document.getElementById('training').value],...a.map((v,i)=>['العبارة '+(i+1),v]),['المتوسط العام',r.avg.toFixed(2)],['المستوى العام',r.level],...r.means.map((v,i)=>['متوسط '+dimensions[i].title,v.toFixed(2)])];const csv='\ufeff'+rows.map(row=>row.map(x=>'"'+String(x??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='مقياس-استخدام-الذكاء-الاصطناعي.csv';link.click();URL.revokeObjectURL(url)});
+document.getElementById('survey').addEventListener('reset',()=>{document.getElementById('result').style.display='none'});
+</script></body></html>
